@@ -9,4 +9,26 @@
 type ProductKeys = keyof Product;
 
 
+02: Provide an example of using union and intersection types in TypeScript.
 
+>> Union type (|) : যদি একাধিক type থাকে, তাহলে value  যেকোনো একটি type হতে পারে।
+ যেমন : function input(value: string | number) {
+  return value.toString();
+}
+এখানে value string ও হতে পারে number ও হতে পারে
+
+>> Intersection type (&): যদি একাধিক type থাকে, তাহলে value অবশ্যই সবগুলো type হতে হবে।
+যেমন: type Person = {
+  name: string;
+};
+
+type Employee = {
+  id: number;
+};
+
+type Staff = Person & Employee;
+
+const staff1: Staff = {
+  name: "Abdur Rahman",
+  id: 10,
+};
